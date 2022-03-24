@@ -10,12 +10,9 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
 import android.view.View
 import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.Switch
-import android.widget.TextView
+
 
 class Ejercicio4 : AppCompatActivity(),SensorEventListener {
 
@@ -67,7 +64,7 @@ class Ejercicio4 : AppCompatActivity(),SensorEventListener {
         }
 
 
-        fondo.invalidate() //fa que es redibuixi el "fondo"    }
+        fondo.invalidate()
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
@@ -88,12 +85,12 @@ class Ejercicio4 : AppCompatActivity(),SensorEventListener {
             val ancho = getWidth()
             val alto = getHeight()
             val pincel1 = Paint()
+
+            pincel1.setARGB(255, 90, 255, 100)
+            canvas.drawCircle( (ancho/2) + posx, (alto/2) + posy, 500f , pincel1)
+
             pincel1.setARGB(255, 255, 100, 100)
-
-            canvas.drawCircle( (ancho/2) + posx, (alto/2) + posy, ancho /20f /* Math.abs(10+z/10)*/, pincel1 )
-
-
-
+            canvas.drawCircle( (ancho/2) + posx, (alto/2) + posy, ancho /20f , pincel1)
         }
     }
 }
