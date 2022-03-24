@@ -71,7 +71,6 @@ class Ejercicio4 : AppCompatActivity(),SensorEventListener {
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-//        TODO("Not yet implemented")
     }
 
     override fun onPause() {

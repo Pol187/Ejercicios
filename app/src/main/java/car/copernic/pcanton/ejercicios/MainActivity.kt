@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var ej3:Button
     lateinit var ej4:Button
     lateinit var ej5:Button
+    lateinit var ej6:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         ej3=findViewById(R.id.Ejercicio3)
         ej4=findViewById(R.id.Ejercicio4)
         ej5=findViewById(R.id.Ejercicio5)
+        ej6=findViewById(R.id.EJERCICIO6)
 
         ej1.setOnClickListener{
             val i = Intent(this@MainActivity, Ejercicio1::class.java)
@@ -42,6 +44,10 @@ class MainActivity : AppCompatActivity() {
         }
         ej5.setOnClickListener{
             val i = Intent(this@MainActivity, Ejercicio5::class.java)
+            startActivity(i)
+        }
+        ej6.setOnClickListener{
+            val i = Intent(this@MainActivity, Ejercicio6::class.java)
             startActivity(i)
         }
     }
