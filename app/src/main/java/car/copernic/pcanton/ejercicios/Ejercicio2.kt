@@ -40,7 +40,7 @@ class Ejercicio2 : AppCompatActivity(), SensorEventListener {
     override fun onResume() {
         super.onResume()
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        sensor?.also { acceleracion ->
+        sensor.also { acceleracion ->
             sensorManager.registerListener(this, sensor , SensorManager.SENSOR_DELAY_NORMAL)
         }
     }

@@ -8,37 +8,63 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="129dp"
-        android:layout_height="46dp"
+        android:layout_width="145dp"
+        android:layout_height="53dp"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="82dp"
         android:text="Ejercicio3"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvTemperatura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/resultado"
+        android:layout_width="0dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="85dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/boton_acelerometro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="Acelerometro"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_gravedad"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_gravedad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="60dp"
+        android:text="Gravedad"
+        app:layout_constraintBottom_toTopOf="@+id/boton_giroscopio"
+        app:layout_constraintStart_toEndOf="@+id/boton_acelerometro" />
+
+    <Button
+        android:id="@+id/boton_temperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="153dp"
-        android:layout_marginEnd="76dp"
-        android:text="Luz"
-        app:layout_constraintEnd_toStartOf="@+id/tvTemperatura"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Temperatura"
+        app:layout_constraintBaseline_toBaselineOf="@+id/boton_giroscopio"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/boton_giroscopio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="260dp"
+        android:text="Giroscopio"
+        app:layout_constraintStart_toEndOf="@+id/boton_temperatura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvTemperatura"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="83dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

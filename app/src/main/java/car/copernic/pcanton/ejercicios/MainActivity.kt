@@ -8,12 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var ej1:Button
-    lateinit var ej2:Button
-    lateinit var ej3:Button
-    lateinit var ej4:Button
-    lateinit var ej5:Button
-    lateinit var ej6:Button
+    private lateinit var ej1:Button
+    private  lateinit var ej2:Button
+    private lateinit var ej3:Button
+    private  lateinit var ej4:Button
+    private  lateinit var ej5:Button
+    private  lateinit var ej6:Button
+    private  lateinit var ej8:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         ej4=findViewById(R.id.Ejercicio4)
         ej5=findViewById(R.id.Ejercicio5)
         ej6=findViewById(R.id.EJERCICIO6)
+        ej8=findViewById(R.id.Ejercicio8)
 
         ej1.setOnClickListener{
             val i = Intent(this@MainActivity, Ejercicio1::class.java)
@@ -50,5 +52,8 @@ class MainActivity : AppCompatActivity() {
             val i = Intent(this@MainActivity, Ejercicio6::class.java)
             startActivity(i)
         }
-    }
+        ej8.setOnClickListener{
+            val i = Intent(this@MainActivity, Ejercicio8::class.java)
+            startActivity(i)
+        }    }
 }
