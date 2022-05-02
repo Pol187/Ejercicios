@@ -55,5 +55,6 @@ class MainActivity : AppCompatActivity() {
         ej8.setOnClickListener{
             val i = Intent(this@MainActivity, Ejercicio8::class.java)
             startActivity(i)
-        }    }
+        }
+    }
 }

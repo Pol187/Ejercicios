@@ -1,5 +1,6 @@
 package car.copernic.pcanton.ejercicios
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.graphics.Canvas
@@ -10,8 +11,10 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.TextView
 
 
 class Ejercicio4 : AppCompatActivity(),SensorEventListener {
@@ -20,7 +23,8 @@ class Ejercicio4 : AppCompatActivity(),SensorEventListener {
     lateinit var sensorManager: SensorManager
     lateinit var sensor: Sensor
     lateinit var fondo: Lienzo
-
+    lateinit var texto1:TextView
+    lateinit var texto2:TextView
     var acx: Float = 0f
     var acy: Float = 0f
     var acz: Float = 0f
@@ -32,14 +36,10 @@ class Ejercicio4 : AppCompatActivity(),SensorEventListener {
         setContentView(R.layout.activity_ejercicio4)
 
         layout = findViewById(R.id.layout)
-
         fondo = Lienzo( this )
-
         layout.addView(fondo)
-
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         sensor = sensorManager.getDefaultSensor(tiposensor)
-
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
 
         }
@@ -54,7 +54,9 @@ class Ejercicio4 : AppCompatActivity(),SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
+
         if (event != null) {
+
             acx = event.values[0]
             acy = event.values[1]
             acz = event.values[2]
@@ -62,6 +64,7 @@ class Ejercicio4 : AppCompatActivity(),SensorEventListener {
             fondo.posx -= acx * 10
             fondo.posy += acy * 10
         }
+
         fondo.invalidate()
     }
 
@@ -77,18 +80,21 @@ class Ejercicio4 : AppCompatActivity(),SensorEventListener {
         var posx: Float = 0f
         var posy: Float = 0f
         var posz: Float = 0f
-
         override fun onDraw(canvas: Canvas) {
+
             canvas.drawRGB(10,10,10)
             val ancho = getWidth()
             val alto = getHeight()
             val pincel1 = Paint()
+            Log.w(TAG,"posx"+posx.toString())
+            Log.w(TAG,"Posy"+posy.toString())
 
             pincel1.setARGB(255, 90, 255, 100)
-            canvas.drawCircle( (ancho/2) + posx, (alto/2) + posy, 500f , pincel1)
+            canvas.drawCircle( (ancho/2f),(alto/2f) , 500f , pincel1)
 
             pincel1.setARGB(255, 255, 100, 100)
             canvas.drawCircle( (ancho/2) + posx, (alto/2) + posy, ancho /20f , pincel1)
+
         }
     }
 }
